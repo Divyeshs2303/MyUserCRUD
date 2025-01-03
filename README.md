@@ -1,4 +1,3 @@
-```markdown
 # User Management CRUD Web App
 
 A responsive web application for managing user details. The app allows you to create, read, update, and delete (CRUD) user information, all stored in local storage for persistence.
