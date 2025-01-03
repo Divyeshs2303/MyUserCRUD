@@ -84,6 +84,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 Feel free to use this template and adapt it for your project. Let me know if you need additional features or details!
-useEffect(() => {
-localStorage.setItem("users", JSON.stringify(users));
-}, [users]);

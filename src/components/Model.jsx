@@ -1,6 +1,7 @@
 // Model.jsx
 import React, { useState } from "react";
 const Model = ({ onSubmit }) => {
+  const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,16 +14,19 @@ const Model = ({ onSubmit }) => {
     pincode: "",
     checkbox: false,
   });
-  console.log("🚀 ~ Model ~ formData:", formData);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
+  const handleClose = () => setShow(false);
+  // const handleShowSearch = () => setShowSearch(true);
+  const handleShow = () => setShow(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
+    handleClose();
     setFormData({
       name: "",
       email: "",
@@ -45,6 +49,7 @@ const Model = ({ onSubmit }) => {
           className="buttons"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
+          onClick={() => handleShow()}
         >
           New User
         </button>
@@ -59,7 +64,7 @@ const Model = ({ onSubmit }) => {
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog">
+          <div className="modal-dialog" show={show} onHide={handleClose}>
             <div className="modal-content">
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="staticBackdropLabel">
@@ -298,6 +303,7 @@ const Model = ({ onSubmit }) => {
                     type="button"
                     className="btn btn-secondary ms-3"
                     data-bs-dismiss="modal"
+                    onClick={handleClose}
                   >
                     Close
                   </button>

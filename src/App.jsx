@@ -23,8 +23,12 @@ function App() {
 
   const deleteUser = (index) => {
     const updatedUsers = users.filter((_, i) => i !== index);
+    console.log("🚀 ~ deleteUser ~ updatedUsers:", updatedUsers);
     setUsers(updatedUsers);
   };
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
 
   return (
     <>
