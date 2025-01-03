@@ -1,4 +1,4 @@
-# User Management CRUD Web App
+# My User CRUD Web App
 
 A responsive web application for managing user details. The app allows you to create, read, update, and delete (CRUD) user information, all stored in local storage for persistence.
 
@@ -20,11 +20,11 @@ A responsive web application for managing user details. The app allows you to cr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/user-management-crud.git
+   git clone https://github.com/Divyeshs2303/MyUserCRUD.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd user-management-crud
+   cd MyUserCRUD
    ```
 3. Install dependencies:
    ```bash
@@ -32,9 +32,9 @@ A responsive web application for managing user details. The app allows you to cr
    ```
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+5. Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
 ## Usage
 
@@ -48,16 +48,25 @@ A responsive web application for managing user details. The app allows you to cr
 ## Folder Structure
 
 ```
-src/
-├── components/
-│   ├── ModalForm.jsx    # Registration form modal
-│   ├── UserTable.jsx    # User list table
-│   └── EditUser.jsx     # Edit functionality
-├── App.jsx              # Main app component
-├── index.js             # Entry point
-└── styles/
-    ├── App.css          # Global styles
-    └── Responsive.css   # Responsive styles
+MyUserCRUD/
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├─ node_modules/ (ignored)
+├── package-lock.json
+├── package.json
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+
 ```
 
 ## Responsive Design
