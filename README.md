@@ -1,5 +1,3 @@
-# MyUserCRUD
-
 ```markdown
 # User Management CRUD Web App
 
