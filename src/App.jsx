@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Model from "./components/Model";
-import Table from "./components/Table";
+import TableData from "./components/TableData";
 import { TailSpin } from "react-loader-spinner";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  console.log("🚀 ~ App ~ users:", users);
-
+  const storedName = JSON.parse(localStorage.getItem("users")) || [];
+  const [users, setUsers] = useState(storedName);
   const [isLoading, setIsLoading] = useState(true);
-  console.log("🚀 ~ App ~ isLoading:", isLoading);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,15 +15,21 @@ function App() {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
   const addUser = (newUser) => {
     setUsers([...users, newUser]);
   };
 
-  const deleteUser = (index) => {
-    const updatedUsers = users.filter((_, i) => i !== index);
-    console.log("🚀 ~ deleteUser ~ updatedUsers:", updatedUsers);
+  const editUser = (index, updatedUser) => {
+    const updatedUsers = [...users];
+    updatedUsers[index] = updatedUser;
     setUsers(updatedUsers);
   };
+
+  const deleteUser = (index) => {
+    setUsers(users.filter((_, i) => i !== index));
+  };
+
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
@@ -33,17 +37,8 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <div className="loader-container ">
-          <TailSpin
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
+        <div className="loader-container">
+          <TailSpin height="80" width="80" color="#4fa94d" />
         </div>
       ) : (
         <>
@@ -51,7 +46,7 @@ function App() {
             <h2>MYUSERCRUD</h2>
             <Model onSubmit={addUser} />
           </div>
-          <Table users={users} onDelete={deleteUser} />
+          <TableData users={users} onDelete={deleteUser} onEdit={editUser} />
         </>
       )}
     </>
