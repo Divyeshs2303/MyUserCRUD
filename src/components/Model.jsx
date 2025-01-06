@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { v4 as uuidv4 } from "uuid";
 const Model = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +17,9 @@ const Model = ({ onSubmit }) => {
     checkbox: false,
   });
   console.log("🚀 ~ Model ~ formData:", formData);
-
+  // const { v4: uuidv4 } = require("uuid");
+  // console.log("🚀 ~ Model ~ uuidv4:", uuidv4);
+  // uuidv4();
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
