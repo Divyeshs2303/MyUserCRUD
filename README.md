@@ -1,86 +1,106 @@
-# My User CRUD Web App
+# CRUD Application with React, Bootstrap, and Context API
 
-A responsive web application for managing user details. The app allows you to create, read, update, and delete (CRUD) user information, all stored in local storage for persistence.
+This is a CRUD (Create, Read, Update, Delete) web application built using HTML, CSS, React, Bootstrap, and the Context API. The application allows users to register, manage, and display user data in a tabular format. Additional features include CSV file export and import functionality.
 
 ## Features
 
-- **Add New User**: Register a new user using a modal form.
-- **Edit User**: Modify existing user details directly from the user list.
-- **Delete User**: Remove a user from the list.
-- **Local Storage**: User data is saved in the browser's local storage for persistence.
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+1. **User Registration**
+   - Users can register by clicking the "New User" button.
+   - A modal form is displayed for the user to enter their details.
+
+2. **Data Display in Table Format**
+   - Registered users are displayed in a table format.
+   - The table contains columns for Name, Email, Password, Phone Number, Gender, City, State, Pincode, and Actions.
+
+3. **Edit and Delete User**
+   - Users can edit their details by clicking the "Edit" button in the Actions column.
+   - Users can delete a row by clicking the "Delete" button.
+
+4. **CSV File Export and Import**
+   - The user data can be exported to a CSV file.
+   - CSV files can be imported to add bulk user data.
+
+5. **Responsive Design**
+   - The application is fully responsive and adapts to different screen sizes.
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript (React.js)
-- **Icons**: FontAwesome/React Icons
-- **Storage**: LocalStorage API
+- **React.js**: Front-end library for building user interfaces.
+- **Bootstrap**: CSS framework for styling and responsive design.
+- **Context API**: For managing state across the application.
+- **HTML & CSS**: For structuring and styling the application.
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Divyeshs2303/MyUserCRUD.git
+   git clone https://github.com/your-username/your-repo-name.git
    ```
+
 2. Navigate to the project directory:
    ```bash
-   cd MyUserCRUD
+   cd your-repo-name
    ```
+
 3. Install dependencies:
    ```bash
    npm install
    ```
+
 4. Start the development server:
    ```bash
-   npm run dev
+   npm start
    ```
-5. Open [http://localhost:5173](http://localhost:5173) in your browser to view the app.
 
 ## Usage
 
-1. Click the **New User** button to open the registration modal.
-2. Fill out the form and click **Submit** to add the user.
-3. View all users in the table on the main page.
-4. Use the **Edit** button to modify user details.
-5. Use the **Delete** button to remove a user.
-6. Data will persist in the browser's local storage.
+1. Click the "New User" button to open the registration modal.
+2. Fill in the user details and click "Add User" to save the data.
+3. View the added user in the table.
+4. Use the "Edit" button to modify user details or the "Delete" button to remove the user.
+5. Export the user data to a CSV file using the "Export" button.
+6. Import a CSV file using the "Import" button to add bulk users.
 
 ## Folder Structure
 
 ```
-MyUserCRUD/
-├── .gitignore
-├── README.md
-├── eslint.config.js
-├── index.html
-├─ node_modules/ (ignored)
-├── package-lock.json
-├── package.json
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── App.css
-│   ├── App.jsx
-│   ├── assets/
-│   │   └── react.svg
-│   ├── index.css
-│   └── main.jsx
-└── vite.config.js
-
+project-root
+|-- public
+|-- src
+    |-- components
+        |-- UserTable.js
+        |-- UserFormModal.js
+        |-- ImportExportButtons.js
+    |-- context
+        |-- UserContext.js
+    |-- styles
+        |-- App.css
+    |-- App.js
+    |-- index.js
 ```
-
-## Responsive Design
-
-- The app is fully responsive, adapting to devices of all sizes, including desktops, tablets, and smartphones.
 
 ## Screenshots
 
-![User Management App Screenshot](link-to-screenshot)
+### User Registration Modal
+![User Registration Modal](./path-to-img_1.png)
+
+### User Data Table
+![User Data Table](./path-to-img_2.png)
+
+## Dependencies
+
+- React
+- React Bootstrap
+- FileSaver.js (for exporting CSV files)
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 
-Feel free to use this template and adapt it for your project. Let me know if you need additional features or details!
+**Author**: Divesh Solanki
