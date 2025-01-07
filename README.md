@@ -34,7 +34,8 @@ This is a CRUD (Create, Read, Update, Delete) web application built using HTML, 
 
 1. Clone the repository:
    ```bash
-git clone https://github.com/Divyeshs2303/MyUserCRUD.git   ```
+   git clone https://github.com/Divyeshs2303/MyUserCRUD.git   
+   ```
 
 2. Navigate to the project directory:
    ```bash
