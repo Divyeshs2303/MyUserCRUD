@@ -34,12 +34,11 @@ This is a CRUD (Create, Read, Update, Delete) web application built using HTML, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   ```
+git clone https://github.com/Divyeshs2303/MyUserCRUD.git   ```
 
 2. Navigate to the project directory:
    ```bash
-   cd your-repo-name
+   cd MyUserCRUD
    ```
 
 3. Install dependencies:
@@ -49,7 +48,7 @@ This is a CRUD (Create, Read, Update, Delete) web application built using HTML, 
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Usage
@@ -65,41 +64,38 @@ This is a CRUD (Create, Read, Update, Delete) web application built using HTML, 
 
 ```
 project-root
-|-- public
-|-- src
-    |-- components
-        |-- UserTable.js
-        |-- UserFormModal.js
-        |-- ImportExportButtons.js
-    |-- context
-        |-- UserContext.js
-    |-- styles
-        |-- App.css
-    |-- App.js
-    |-- index.js
+MyUserCRUD/
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── img_1.png
+├── img_2.png
+├── index.html
+├── package-lock.json
+├── package.json
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── Model.jsx
+│   │   └── TableData.jsx
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+
 ```
 
 ## Screenshots
 
 ### User Registration Modal
-![User Registration Modal](./path-to-img_1.png)
+![img_1](https://github.com/user-attachments/assets/d54c9a25-df0f-4f08-83b6-863a3b44d275)
 
 ### User Data Table
-![User Data Table](./path-to-img_2.png)
-
-## Dependencies
-
-- React
-- React Bootstrap
-- FileSaver.js (for exporting CSV files)
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
+![img_2](https://github.com/user-attachments/assets/e44aead1-fc49-492b-918f-0149c6540573)
 
 ---
 
