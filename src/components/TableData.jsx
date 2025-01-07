@@ -1,8 +1,15 @@
-// Table.jsx
-import React, { useState } from "react";
+import React from "react";
 import Table from "react-bootstrap/Table";
+import { useShow } from "../App";
 
 const TableData = ({ users, onEdit, onDelete }) => {
+  const { handleShow } = useShow();
+
+  const handleEdit = (user) => {
+    handleShow();
+    onEdit(user); // Pass the entire user object to the modal for pre-filling
+  };
+
   return (
     <div className="tableData">
       <Table bordered hover>
@@ -30,7 +37,9 @@ const TableData = ({ users, onEdit, onDelete }) => {
             </tr>
           ) : (
             users.map((user, index) => (
-              <tr key={index}>
+              <tr key={user.id}>
+                {" "}
+                {/* Use user.id for unique key */}
                 <th scope="row">{index + 1}</th>
                 <td>{user?.name}</td>
                 <td>{user?.email}</td>
@@ -45,14 +54,14 @@ const TableData = ({ users, onEdit, onDelete }) => {
                   <button
                     type="button"
                     className="btn btn-primary"
-                    onClick={() => onEdit(index)}
+                    onClick={() => handleEdit(user)} // Pass the user to the edit handler
                   >
                     Edit
                   </button>
                   <button
                     type="button"
                     className="btn btn-danger ms-2"
-                    onClick={() => onDelete(index)}
+                    onClick={() => onDelete(user.id)} // Pass user.id for deleting
                   >
                     Delete
                   </button>
