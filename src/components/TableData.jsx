@@ -7,7 +7,7 @@ const TableData = ({ users, onEdit, onDelete }) => {
 
   const handleEdit = (user) => {
     handleShow();
-    onEdit(user); // Pass the entire user object to the modal for pre-filling
+    onEdit(user);
   };
 
   return (
@@ -38,8 +38,6 @@ const TableData = ({ users, onEdit, onDelete }) => {
           ) : (
             users.map((user, index) => (
               <tr key={user.id}>
-                {" "}
-                {/* Use user.id for unique key */}
                 <th scope="row">{index + 1}</th>
                 <td>{user?.name}</td>
                 <td>{user?.email}</td>
@@ -54,14 +52,14 @@ const TableData = ({ users, onEdit, onDelete }) => {
                   <button
                     type="button"
                     className="btn btn-primary"
-                    onClick={() => handleEdit(user)} // Pass the user to the edit handler
+                    onClick={() => handleEdit(user)}
                   >
                     Edit
                   </button>
                   <button
                     type="button"
                     className="btn btn-danger ms-2"
-                    onClick={() => onDelete(user.id)} // Pass user.id for deleting
+                    onClick={() => onDelete(user.id)}
                   >
                     Delete
                   </button>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { v4 as uuidv4 } from "uuid"; // To create a new UUID for new users
+import { v4 as uuidv4 } from "uuid";
 
 const Model = ({ onSubmit, userToEdit, onUpdate }) => {
   const [formData, setFormData] = useState({
@@ -40,9 +40,9 @@ const Model = ({ onSubmit, userToEdit, onUpdate }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (userToEdit) {
-      onUpdate(formData); // Update existing user
+      onUpdate(formData);
     } else {
-      const newUser = { id: uuidv4(), ...formData }; // Create new user
+      const newUser = { id: uuidv4(), ...formData };
       onSubmit(newUser);
     }
     handleClose();
@@ -312,9 +312,6 @@ const Model = ({ onSubmit, userToEdit, onUpdate }) => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          {/* <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button> */}
           <div className="text-center me-5 text-body-tertiary">
             &#169; Divesh solanki
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -326,5 +323,3 @@ const Model = ({ onSubmit, userToEdit, onUpdate }) => {
 };
 
 export default Model;
-
-<div className="form-group"></div>;
