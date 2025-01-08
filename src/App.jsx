@@ -151,9 +151,9 @@ function App() {
         value = value.replace(/^"(.*)"$/, "$1");
 
         if (header === "status") {
-          dataObject[header] = value === "true"; // Convert 'true' to boolean true
+          dataObject[header] = value === "true";
         } else {
-          dataObject[header] = value; // Keep other values as strings
+          dataObject[header] = value;
         }
       }
       parsedData.push(dataObject);
@@ -164,7 +164,6 @@ function App() {
     const importUpdatedUser = [...users, ...parsedData];
     setUsers(importUpdatedUser);
     localStorage.setItem("users", JSON.stringify(importUpdatedUser));
-    // dispatch(ImportData(parsedData));
 
     return parsedData;
   };
